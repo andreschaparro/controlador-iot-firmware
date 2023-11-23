@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <title>Termotanques Solares Cocina</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-wrapper blue darken-4">
+            <a href="/" class="brand-logo right">Termotanques Solares Cocina</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <ul class="collapsible z-depth-2">
+            <li>
+                <div class="collapsible-header">
+                    <h4>Informacion</h4>
+                </div>
+                <div class="collapsible-body">
+                    <ul class="collection">
+                        <li class="collection-item">Version del Firmware: 1.0.0</li>
+                        <li class="collection-item">Version del Hardware: 1.0.0</li>
+                        <li class="collection-item">Autor: Ing. Andres Chaparro</li>
+                    </ul>
+                </div>
+            </li>
+
+            <li>
+                <div class="collapsible-header">
+                    <h4>WiFi</h4>
+                </div>
+                <div class="collapsible-body">
+                    <form method="post" class="col s12" action="/wifi">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" minlength="0" maxlength="29" id="ssid" name="ssid" class="validate"
+                                    value=FV-IOT>
+                                <label for="ssid">SSID</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="password" minlength="0" maxlength="29" id="ssidPwd" name="ssidPwd"
+                                    class="validate" value=FVVR#iot1980>
+                                <label for="ssidPwd">Contraseña</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <button class="btn waves-effect waves-light" type="submit"
+                                    name="action">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </li>
+
+            <li>
+                <div class="collapsible-header">
+                    <h4>Dispositivo</h4>
+                </div>
+                <div class="collapsible-body">
+                    <form method="post" class="col s12" action="/device">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" minlength="0" maxlength="29" id="dev" name="dev" class="validate"
+                                    value=NodoIoT>
+                                <label for="dev">Nombre</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="password" minlength="0" maxlength="29" id="devPwd" name="devPwd"
+                                    class="validate" value=0123456789>
+                                <label for="devPwd">Contraseña</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <button class="btn waves-effect waves-light" type="submit"
+                                    name="action">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </li>
+
+            <li>
+                <div class="collapsible-header">
+                    <h4>Firebase</h4>
+                </div>
+                <div class="collapsible-body">
+                    <form method="post" class="col s12" action="/firebase">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" minlength="0" maxlength="169" id="apiKey" name="apiKey"
+                                    class="validate" value=AIzaSyChOTU8-FHWxs-WIB3FaG8na70TMkJXpUY>
+                                <label for="apiKey">API Key</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" minlength="0" maxlength="169" id="dbURL" name="dbURL"
+                                    class="validate"
+                                    value=https://telemetria-i-y-d-calefaccion-default-rtdb.firebaseio.com />
+                                <label for="dbURL">Database URL</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="email" minlength="0" maxlength="29" id="userEmail" name="userEmail"
+                                    class="validate" value=iotsolarescocina@gmail.com>
+                                <label for="userEmail">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="password" minlength="0" maxlength="29" id="userPwd" name="userPwd"
+                                    class="validate" value=IOT#solares2023>
+                                <label for="userPwd">Contraseña</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="number" min="1" max="86400" step="1" id="interval" name="interval"
+                                    class="validate" value=60>
+                                <label for="interval">Intervalo entre Telemetrias de 1 a 86400s</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <button class="btn waves-effect waves-light" type="submit"
+                                    name="action">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </li>
+
+            <li>
+                <div class="collapsible-header">
+                    <h4>Setpoints</h4>
+                </div>
+                <div class="collapsible-body">
+                    <form method="post" class="col s12" action="/setpoints">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="number" min="0" max="100" step="0.1" id="spT1" name="spT1" class="validate"
+                                    value=65.0>
+                                <label for="spT1">Setpoint T1 de 0 a 100&degC</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="number" min="0" max="100" step="0.1" id="spT2" name="spT2" class="validate"
+                                    value=65.0>
+                                <label for="spT2">Setpoint T2 de 0 a 100&degC</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <button class="btn waves-effect waves-light" type="submit"
+                                    name="action">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </li>
+
+            <li>
+                <div class="collapsible-header">
+                    <h4>Consumo de Agua</h4>
+                </div>
+                <div class="collapsible-body">
+                    <ul class="collection">
+                        <li class="collection-item">
+                            consF1:
+                            <h6 class="secondary-content">l</h6>
+                            <h6 class="secondary-content telemetries" id="consF1">0.0</h6>
+                        </li>
+                        <li class="collection-item">
+                            <form method="post" class="col s12" action="/consumption">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <button class="btn waves-effect waves-light" type="submit"
+                                            name="action">Reiniciar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li>
+                <div class="collapsible-header">
+                    <h4>Entradas</h4>
+                </div>
+                <div class="collapsible-body">
+                    <ul class="collection">
+                        <li class="collection-item">
+                            T1:
+                            <h6 class="secondary-content">&degC</h6>
+                            <h6 class="secondary-content telemetries" id="t1">88.4</h6>
+                        </li>
+                        <li class="collection-item">
+                            T2:
+                            <h6 class="secondary-content">&degC</h6>
+                            <h6 class="secondary-content telemetries" id="t2">87.9</h6>
+                        </li>
+                        <li class="collection-item">
+                            T3:
+                            <h6 class="secondary-content">&degC</h6>
+                            <h6 class="secondary-content telemetries" id="t3">71.3</h6>
+                        </li>
+                        <li class="collection-item">
+                            T4:
+                            <h6 class="secondary-content">&degC</h6>
+                            <h6 class="secondary-content telemetries" id="t4">47.2</h6>
+                        </li>
+                        <li class="collection-item">
+                            F1:
+                            <h6 class="secondary-content">l/min</h6>
+                            <h6 class="secondary-content telemetries" id="f1">0.0</h6>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+
+            <li>
+                <div class="collapsible-header">
+                    <h4>Salidas</h4>
+                </div>
+                <div class="collapsible-body">
+                    <ul class="collection">
+                        <li class="collection-item">
+                            CTRL:
+                            <div class="switch secondary-content">
+                                <label>
+                                    Remoto
+                                    <input type="checkbox" class="commands" id="ctrl" checked>
+                                    <span class="lever"></span>
+                                    Local
+                                </label>
+                            </div>
+                        </li>
+                        <li class="collection-item">
+                            V1:
+                            <div class="switch secondary-content">
+                                <label>
+                                    Cerrada
+                                    <input type="checkbox" class="commands" id="v1" checked>
+                                    <span class="lever"></span>
+                                    Abierta
+                                </label>
+                            </div>
+                        </li>
+                        <li class="collection-item">
+                            V2:
+                            <div class="switch secondary-content">
+                                <label>
+                                    Cerrada
+                                    <input type="checkbox" class="commands" id="v2" checked>
+                                    <span class="lever"></span>
+                                    Abierta
+                                </label>
+                            </div>
+                        </li>
+                        <li class="collection-item">
+                            V3:
+                            <div class="switch secondary-content">
+                                <label>
+                                    Cerrada
+                                    <input type="checkbox" class="commands" id="v3" checked>
+                                    <span class="lever"></span>
+                                    Abierta
+                                </label>
+                            </div>
+                        </li>
+                        <li class="collection-item">
+                            V4:
+                            <div class="switch secondary-content">
+                                <label>
+                                    Cerrada
+                                    <input type="checkbox" class="commands" id="v4">
+                                    <span class="lever"></span>
+                                    Abierta
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            M.AutoInit();
+
+            let commands = document.querySelectorAll(".commands");
+
+            commands.forEach((command) => {
+                command.addEventListener("change", () => {
+                    let formData = new FormData();
+                    formData.append("id", command.id);
+                    formData.append("checked", command.checked);
+
+                    let xhr = new XMLHttpRequest();
+                    xhr.open("POST", "/commands", true);
+                    xhr.send(formData);
+                });
+            });
+
+            let telemetries = document.querySelectorAll(".telemetries");
+
+            setInterval(() => {
+                telemetries.forEach((telemetry) => {
+                    let telemetryId = telemetry.id;
+
+                    let xhr = new XMLHttpRequest();
+                    xhr.onreadystatechange = () => {
+                        if (xhr.readyState === XMLHttpRequest.DONE) {
+                            if (xhr.status === 200) {
+                                let response = JSON.parse(xhr.responseText);
+                                let telemetryValue = response[telemetryId];
+                                telemetry.textContent = telemetryValue;
+                            }
+                        }
+                    };
+                    xhr.open('GET', `/telemetries?id=${telemetryId}`, true);
+                    xhr.send();
+                });
+            }, 5000);
+
+        });
+    </script>
+</body>
+
+</html>
